@@ -4,56 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Administración de Proyectos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100 bg-light">
 
-    <!-- HEADER -->
-    <header>
-        <nav>
-            <a href="../index.html">Inicio</a>
-            <span>|</span>
-            <a href="../pages/proyectos.html">Proyectos</a>
-            <span>|</span>
-            <a href="../pages/acercade.html">Acerca de</a>
-            <span>|</span>
-            <a href="#">Contacto</a>
+    <header class="bg-white shadow-sm py-1"> <div class="container d-flex justify-content-between align-items-center"> <nav class="d-flex align-items-center py-2">
+            <a href="../index.html" class="nav-custom-link">Inicio</a>
+            <span class="mx-2 text-muted opacity-50">|</span>
+            <a href="../pages/proyectos.html" class="nav-custom-link">Proyectos</a>
+            <span class="mx-2 text-muted opacity-50">|</span>
+            <a href="../pages/acercade.html" class="nav-custom-link">Acerca de</a>
+            <span class="mx-2 text-muted opacity-50">|</span>
+            <a href="#" class="nav-custom-link active">Contacto</a>
         </nav>
 
-        <div class="user-actions">
-            <span class="user-icon">👤</span>
-            <a href="/pages/login-center/login.html" class="btn-login">Iniciar Sesion</a>
-            <a href="/pages/login-center/register.html" class="btn-register">Registrarse</a>
+        <div class="d-flex align-items-center gap-1"> <span class="user-icon me-2" style="color: #3A506B;">👤</span>
+            <a href="/pages/login-center/login.html" class="btn-custom-main btn-sm-custom">Iniciar Sesión</a>
+            <a href="/pages/login-center/register.html" class="btn-custom-main btn-sm-custom">Registrarse</a>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- CUERPO -->
-    <h1 class="title-contacto">Formulario de <span class="blue">Contacto</span></h1>
-    <p class="text-contact">No dudes en enviarnos tu consulta sobre: Funcionamiento, bugs, perdida de datos
-        Llena nuestro formulario y te atenderemos en menos de 24 horas
-    </p>
+    <main class="flex-grow-1 container py-5">
+        <div class="row justify-content-center text-center mb-4">
+            <div class="col-md-8">
+                <h1 class="fw-bold text-dark">Formulario de <span class="text-custom-blue">Contacto</span></h1>
+                <p class="text-secondary">
+                    No dudes en enviarnos tu consulta sobre: Funcionamiento, bugs, pérdida de datos.<br>
+                    Llena nuestro formulario y te atenderemos en menos de 24 horas.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="card border-0 shadow-sm p-4 rounded-3">
+                    <form action="#">
+                        <div class="mb-3 text-start">
+                            <label class="form-label fw-bold">Correo Electrónico</label>
+                            <input type="email" class="form-control border-light-subtle bg-light py-2" placeholder="ejemplo@dominio.com">
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label class="form-label fw-bold">Teléfono Celular</label>
+                            <input type="number" class="form-control border-light-subtle bg-light py-2" placeholder="+54 AAAAAAAAA">
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label class="form-label fw-bold">Consulta/duda</label>
+                            <textarea class="form-control border-light-subtle bg-light" rows="4" placeholder="Escribe aquí tu consulta"></textarea>
+                        </div>
+                        <div class="d-grid pt-2">
+                            <input type="submit" class="btn-custom-main py-2 fw-bold" value="Enviar Consulta">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
     
-    <section class="form-section">
-        <form action="#">
-            <label for="id">Correo Electronico</label>
-            <input type="email" placeholder="ejemplo@dominio.com">
-            <label for="id">Telefono Celular</label>
-            <input type="number" placeholder="+54 AAAAAAAAA">
-            <label for="id">Consulta/duda</label>
-            <input type="text" placeholder="Escribe aqui tu consulta">
-            <input type="submit" class="boton-form" value="Enviar Consulta">
-        </form>
-    </section>
-    
-    <!-- FOOTER -->
-    <footer>
-        <h4>REDES SOCIALES</h4>
-        <ul>
-            <li>Instagram: administrador.de.area.sig</li>
-            <li>CompuTrabajo: administradordetarea.trabajo</li>
-            <li>Correo Electrónico: Administradordeproyectos@dominio.com</li>
-        </ul>
+    <footer class="footer-custom py-5 text-white">
+        <div class="container text-start">
+            <h4 class="footer-title mb-4">REDES SOCIALES</h4>
+            <ul class="list-unstyled">
+                <li class="mb-2">Instagram: administrador.de.area.sig</li>
+                <li class="mb-2">CompuTrabajo: administradordetarea.trabajo</li>
+                <li class="mb-2">Correo Electrónico: Administradordeproyectos@dominio.com</li>
+            </ul>
+        </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
