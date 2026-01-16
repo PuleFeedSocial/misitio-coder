@@ -7,34 +7,30 @@
 }
 
 /* --- HEADER Y NAVEGACIÓN --- */
-/* --- HEADER Y NAVEGACIÓN --- */
 header {
     width: 100%;
-    /* Eliminamos display:flex y justify-content de aquí porque el 
-       div.container-fluid interno de Bootstrap ya se encarga de la alineación */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     background-color: #ffffff;
 }
 
 header nav {
-    /* Reduje el padding para que encaje mejor en las esquinas si es necesario */
     padding: 0.5rem 0; 
 }
 
 header nav a {
     text-decoration: none;
     color: #0B132B;
-    margin: 0 1rem; /* Margen solo lateral */
-    position: relative; /* Necesario para el efecto ::after si lo usas */
+    margin: 0 1rem;
+    position: relative;
 }
 
 header nav a:hover {
     color: #5BC0BE;
 }
 
-/*BOTONES Y TEXTO*/
+/* BOTONES Y TEXTO DE INTERFAZ */
 .btn-custom-main {
-    background-color: #3A506B; /* Azul oscuro */
+    background-color: #3A506B;
     color: #ffffff;
     text-decoration: none;
     padding: 8px 16px;
@@ -47,21 +43,16 @@ header nav a:hover {
 }
 
 .btn-custom-main:hover {
-    background-color: #5BC0BE; /* Teal */
-    color: #0B132B; /* Texto oscuro */
+    background-color: #5BC0BE;
+    color: #0B132B;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.radio-btn{
-    display: none  !important;
-}
 
-/* COLORES DE TEXTO */
 .text-custom-blue {
     color: #3A506B;
 }
 
-
-/*CUERPO DE PAGINA */
+/* --- CUERPO DE PÁGINA --- */
 body {
     font-family: Arial, sans-serif;
     background-color: #F9F8F6;
@@ -72,10 +63,12 @@ body {
     justify-content: space-between;
     color: #0B132B;
 }
-main{
+
+main {
     flex: 1;
     width: 100%;
 }
+
 /* --- BOTONES Y ACCIONES DE USUARIO --- */
 .user-actions {
     padding: 10px;
@@ -91,7 +84,8 @@ main{
     text-decoration: none;
     cursor: pointer;
 }
-.btn-login:hover, .btn-register:hover{
+
+.btn-login:hover, .btn-register:hover {
     cursor: pointer;
     background: #5BC0BE;
     color: #0B132B;
@@ -99,7 +93,6 @@ main{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Botón genérico azul */
 .button {
     width: 120px;
     height: 30px;
@@ -117,7 +110,6 @@ main{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Estilo botón bordeado */
 .buton {
     padding: 1rem;
     border: 1px solid #1C2541;
@@ -125,7 +117,6 @@ main{
     color: #3A506B;
 }
 
-/* Botón específico para enlaces de proyecto */
 a[href="proyectos/project.html"] {
     padding: 1rem;
     border: 1px solid #1C2541;
@@ -134,7 +125,8 @@ a[href="proyectos/project.html"] {
     background-color: #3A506B;
     text-decoration: none;
 }
-a[href="proyectos/project.html"]:hover{
+
+a[href="proyectos/project.html"]:hover {
     cursor: pointer;
     background: #5BC0BE;
     color: #0B132B;
@@ -154,64 +146,7 @@ a[href="proyectos/project.html"]:hover{
     padding: 0 2rem;
     min-height: auto;
 }
-.faq-container {
-  max-width: 900px;
-  width: 50%;
-  margin: 0 auto;
-  font-family: sans-serif;
-  color: #1C2541; /* Azul característico */
-}
 
-/* El elemento summary es el "botón" */
-summary {
-  list-style: none; 
-  display: flex;
-  align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #eeeeee;
-  cursor: pointer;
-  position: relative;
-}
-
-summary::-webkit-details-marker {
-  display: none; /* Quita la flecha en Safari */
-}
-
-/* Estilo del número (01/) */
-.faq-number {
-  font-size: 0.8rem;
-  margin-right: 20px;
-  font-weight: bold;
-}
-
-/* Estilo de la pregunta */
-.faq-question {
-  flex-grow: 1;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-/* El botón azul con el + */
-.faq-icon {
-  background-color: #3A506B;
-  color: white;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  font-size: 1.2rem;
-}
-
-/* El contenido que se muestra al abrir */
-.faq-content {
-  padding: 20px;
-  background-color: #f9f9f9;
-  color: #0B132B;
-}
-
-/* Contenido de texto dentro de la sección principal */
 .main-section .text-content {
     flex: 2;
     text-align: left;
@@ -223,75 +158,65 @@ summary::-webkit-details-marker {
     color: #0B132B;
 }
 
-/* Estilos para textos encontrados */
 .encontrados {
     margin: 20px;
 }
 
-/* Contenido de texto genérico */
 .text-content {
     padding: 20px;
     text-align: center;
 }
 
-/* Utilidad de color texto azul */
 .blue {
     color: #3A506B;
 }
 
-/* Títulos de proyectos */
 main .title-project {
     padding: 20px;
     color: #1C2541;
 }
 
 /* --- SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) --- */
-/* Contenedor del acordeón */
 .faq-container {
-    max-width: 900px; /* Ancho máximo para que se vea elegante */
-    margin: 0 auto;   /* Centrado horizontal */
+    max-width: 900px; 
+    margin: 0 auto; 
 }
 
-/* Cada linea del acordeón */
 .faq-item {
-    border-bottom: 1px solid #eeeeee; /* Linea divisoria sutil */
+    border-bottom: 1px solid #eeeeee; 
     margin-bottom: 10px;
 }
 
-/* El encabezado clickeable (Donde está el +) */
 summary {
-    list-style: none; /* Quita el triángulo por defecto de HTML */
-    display: flex !important;    /* Activa Flexbox para alinear los 3 elementos */
-    align-items: center; /* Centra verticalmente */
+    list-style: none; 
+    display: flex !important;
+    align-items: center; 
+    justify-content: flex-start;
     padding: 25px 0;
     cursor: pointer;
     width: 100%;
 }
 
-/* Ocultar marcador por defecto en Safari/Chrome */
 summary::-webkit-details-marker {
     display: none;
 }
 
-/* El número (01, 02...) */
 .faq-number {
     font-weight: bold;
     font-size: 0.9rem;
     color: #3A506B;
-    margin-right: 30px; /* Espacio entre número y texto */
-    min-width: 30px;
+    margin-right: 25px; 
+    flex-shrink: 0;
 }
 
-/* El Texto de la pregunta - LA CLAVE DEL DISEÑO */
 .faq-question {
     font-size: 1.1rem;
     color: #0B132B;
     font-weight: 500;
-    flex-grow: 1; /* ¡IMPORTANTE! Esto empuja el icono al final */
     text-align: left;
+    margin-right: 15px;
 }
 
-/* El botón cuadrado del + */
 .faq-icon {
     background-color: #3A506B;
     color: white;
@@ -304,24 +229,45 @@ summary::-webkit-details-marker {
     font-size: 1.5rem;
     font-weight: bold;
     line-height: 1;
-    padding-bottom: 4px; /* Pequeño ajuste visual para centrar el + */
+    padding-bottom: 4px; 
     transition: 0.3s;
+    margin-left: auto;
+    flex-shrink: 0;
 }
 
-/* Efecto Hover al pasar el mouse */
 summary:hover .faq-question {
     color: #3A506B;
 }
 
 summary:hover .faq-icon {
-    background-color: #5BC0BE; /* Cambia a Teal al pasar el mouse */
+    background-color: #5BC0BE; 
 }
 
-/* Contenido oculto que se despliega */
 .faq-content {
-    padding: 10px 0 30px 60px; /* Indentación para que se lea bien */
+    padding: 10px 0 30px 60px; 
     color: #555;
     line-height: 1.6;
+}
+
+.faq-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.faq-box h3 {
+    font-size: 2rem;
+    color: #0B132B;
+}
+
+.faq-box-proj {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 /* --- GALERÍA DE PROYECTOS --- */
@@ -360,19 +306,18 @@ summary:hover .faq-icon {
     margin: 1rem auto;
 }
 
-.added{
+.added {
     display: flex;
     justify-content: flex-end;
     padding: 20px;
     gap: 20px;
 }
 
-.added button{
+.added button {
     height: 2.4rem;
     width: 12rem;
 }
 
-/* Imágenes de proyectos */
 .image-placeholder img {
     display: block;
     width: 100%;
@@ -383,20 +328,18 @@ summary:hover .faq-icon {
 }
 
 /* --- FORMULARIOS --- */
-/*ESTILO CON BOOTSTRAP*/
 .form-control:focus {
     box-shadow: 0 0 0 0.25rem rgba(91, 192, 190, 0.2);
     border-color: #5BC0BE;
 }
 
-/* PIE DE PÁGINA (FOOTER) */
 .footer-custom {
-    background-color: #0B132B; /* Azul profundo original */
+    background-color: #0B132B;
     width: 100%;
 }
 
 .footer-title {
-    color: #6FFFE9; /* Acento teal brillante */
+    color: #6FFFE9;
     font-size: 1.1rem;
     font-weight: bold;
     letter-spacing: 1px;
@@ -417,13 +360,15 @@ summary:hover .faq-icon {
     align-items: center;
     height: 35.6rem;
 }
+
 .form-section-2 {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 35.6rem;
 }
-.form-section-2 form{
+
+.form-section-2 form {
     width: 22rem;
     border: 1px solid #eeeeee;
     padding: 20px;
@@ -474,7 +419,8 @@ form input[type="submit"] {
     cursor: pointer;
     margin-top: 10px;
 }
-form input[type="submit"]:hover{
+
+form input[type="submit"]:hover {
     cursor: pointer;
     background: #5BC0BE;
     color: #0B132B;
@@ -501,14 +447,12 @@ form input[type="submit"]:hover{
     color: #0B132B;
 }
 
-/* Configuración de la tabla Grid */
 .grid-table {
     display: grid;
     grid-template-columns: 2fr 1fr 80px 80px 80px;
     gap: 10px;
 }
 
-/* Elementos de cabecera de la tabla */
 .grid-header {
     display: contents;
 }
@@ -529,7 +473,6 @@ form input[type="submit"]:hover{
     justify-content: center;
 }
 
-/* Filas y celdas de la tabla */
 .grid-row {
     display: contents;
 }
@@ -557,15 +500,13 @@ form input[type="submit"]:hover{
 
 .cell.status {
     justify-content: center;
-    position: relative; /* Importante para el radio button */
+    position: relative;
 }
 
-/* Efecto hover en filas */
 .grid-row:hover .cell {
     background-color: #fafafa;
 }
 
-/* Botones dentro de la tabla */
 main .botones-table {
     display: flex;
     justify-content: flex-end;
@@ -573,12 +514,10 @@ main .botones-table {
     margin: 1rem auto;
 }
 
-/* Ocultamos el radio button real */
 .radio-btn {
-    display: none;
+    display: none !important;
 }
 
-/* Estilo base del círculo (Label) */
 .status-dot {
     width: 14px;
     height: 14px;
@@ -586,26 +525,24 @@ main .botones-table {
     background-color: transparent;
     border: 2px solid #eeeeee;
     transition: all 0.2s ease;
-    cursor: pointer; /* Cursor de mano */
+    cursor: pointer;
     display: block;
     position: relative;
 }
 
-.status-dot::after{
+.status-dot::after {
     content: '';
-    position: relative;
+    position: absolute;
     top: -10px;
     bottom: -10px;
     left: -10px;
     right: -10px;
 }
 
-/* Efecto Hover sobre el punto */
 .status-dot:hover {
     transform: scale(1.1);
     border-color: #ccc;
 }
-
 
 .radio-btn.pending:checked + .status-dot {
     background-color: #3A506B;
@@ -613,20 +550,17 @@ main .botones-table {
     box-shadow: 0 0 5px rgba(0,0,0, 0.2);
 }
 
-
 .radio-btn.progress:checked + .status-dot {
     background-color: #5BC0BE;
     border-color: #5BC0BE;
     box-shadow: 0 0 8px rgba(91, 192, 190, 0.4);
 }
 
-
 .radio-btn.finished:checked + .status-dot {
     background-color: #6FFFE9;
     border-color: #6FFFE9;
     box-shadow: 0 0 5px rgba(111, 255, 233, 0.4);
 }
-
 
 /* --- FOOTER --- */
 footer {
@@ -661,32 +595,32 @@ footer li {
         flex-wrap: wrap;
         justify-content: center;
     }
-    nav a{
+    nav a {
         margin: 0.5rem;
     }
 
-    form{
+    form {
         width: 95%;
         margin: 20px auto;
     }
-    .form-section{
+    .form-section {
         height: auto;
         padding: 20px 0;
     }
-    .project-board{
+    .project-board {
         padding: 10px;
-        background:transparent;
+        background: transparent;
         box-shadow: none;
     }
-    .grid-header{
+    .grid-header {
         display: none;
     }
-    .grid-table{
+    .grid-table {
         display: flex;
         flex-direction: column;
         gap: 15px;
     }
-    .grid-row{
+    .grid-row {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: 
@@ -699,70 +633,70 @@ footer li {
         padding: 15px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
-    .cell{
+    .cell {
         border-bottom: none;
         padding: 5px 0;
     }
-    .cell.task{
+    .cell.task {
         grid-area: tarea;
         font-size: 1.1rem;
         font-weight: 700;
         color: #0B132B;
         margin-bottom: 5px;
     }
-    .cell.date{
+    .cell.date {
         grid-area: fecha;
         margin-bottom: 15px;
         border-bottom: 1px dashed #eeeeee;
         padding-bottom: 10px;
     }
-    .cell.status{
+    .cell.status {
         display: flex;
         align-items: flex-end;
         justify-content: center;
         height: 40px;
         position: relative;
     }
-    .cell:has(.pending){grid-area:btn1}
-    .cell:has(.progress){grid-area:btn2}
-    .cell:has(.finished){grid-area:btn3}
+    .cell:has(.pending) { grid-area: btn1 }
+    .cell:has(.progress) { grid-area: btn2 }
+    .cell:has(.finished) { grid-area: btn3 }
 
-    .status-dot::before{
+    .status-dot::before {
         display: block;
         position: absolute;
         top: 0;
         left: 50%;
-        transform: traslateX(-50%);
+        transform: translateX(-50%);
         font-size: 0.7rem;
         font-weight: 600;
         white-space: nowrap;
     }
-    .radio-btn.pending + .status-dot::before{
+    .radio-btn.pending + .status-dot::before {
         content: "Prog.";
         color: #5BC0BE;
     }
-    .radio-btn.finished + .status-dot::before{
+    .radio-btn.finished + .status-dot::before {
         content: "Fin";
         color: #6FFFE9;
     }
-    .botones-table{
+    .botones-table {
         justify-content: center;
         width: 100%;
     }
-    .button{
+    .button {
         width: 48%;
     }
-    .proyectos{
+    .proyectos {
         width: 95%;
         padding: 0 10px;
     }
-    .proyecto{
+    .proyecto {
         width: 100%;
         margin: 10px 0;
         height: auto;
     }
 
-    .faq-box,.text-content,.main-section {
+    .faq-box, .text-content, .main-section {
         align-items: center;
         padding: 10px;
     }
