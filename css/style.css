@@ -7,46 +7,29 @@
 }
 
 /* --- HEADER Y NAVEGACIÓN --- */
+/* --- HEADER Y NAVEGACIÓN --- */
 header {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* Eliminamos display:flex y justify-content de aquí porque el 
+       div.container-fluid interno de Bootstrap ya se encarga de la alineación */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     background-color: #ffffff;
 }
+
 header nav {
-    padding: 1rem;
+    /* Reduje el padding para que encaje mejor en las esquinas si es necesario */
+    padding: 0.5rem 0; 
 }
 
 header nav a {
     text-decoration: none;
     color: #0B132B;
-    margin: 1rem;
+    margin: 0 1rem; /* Margen solo lateral */
+    position: relative; /* Necesario para el efecto ::after si lo usas */
 }
+
 header nav a:hover {
-    color: #5BC0BE; /* El texto cambia sutilmente a tu color */
-}
-
-header nav a:hover::after {
-    width: 100%; /* La línea crece hasta cubrir todo el ancho */
-}
-
-/*NAV CON EL BOOTSTRAP*/
-
-.nav-custom-link {
-    text-decoration: none;
-    color: #0B132B; /* Color oscuro original */
-    padding:  1rem;
-    transition: 0.2s;
-}
-
-.nav-custom-link:hover {
-    color: #5BC0BE; /* Teal original */
-}
-
-.nav-custom-link.active {
-    font-weight: bold;
+    color: #5BC0BE;
 }
 
 /*BOTONES Y TEXTO*/
@@ -67,6 +50,9 @@ header nav a:hover::after {
     background-color: #5BC0BE; /* Teal */
     color: #0B132B; /* Texto oscuro */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.radio-btn{
+    display: none  !important;
 }
 
 /* COLORES DE TEXTO */
@@ -260,25 +246,82 @@ main .title-project {
 }
 
 /* --- SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) --- */
-.faq-box {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: .4rem;
+/* Contenedor del acordeón */
+.faq-container {
+    max-width: 900px; /* Ancho máximo para que se vea elegante */
+    margin: 0 auto;   /* Centrado horizontal */
 }
 
-.faq-box h3 {
-    font-size: 2rem;
+/* Cada linea del acordeón */
+.faq-item {
+    border-bottom: 1px solid #eeeeee; /* Linea divisoria sutil */
+    margin-bottom: 10px;
+}
+
+/* El encabezado clickeable (Donde está el +) */
+summary {
+    list-style: none; /* Quita el triángulo por defecto de HTML */
+    display: flex !important;    /* Activa Flexbox para alinear los 3 elementos */
+    align-items: center; /* Centra verticalmente */
+    padding: 25px 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Ocultar marcador por defecto en Safari/Chrome */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* El número (01, 02...) */
+.faq-number {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #3A506B;
+    margin-right: 30px; /* Espacio entre número y texto */
+    min-width: 30px;
+}
+
+/* El Texto de la pregunta - LA CLAVE DEL DISEÑO */
+.faq-question {
+    font-size: 1.1rem;
     color: #0B132B;
+    font-weight: 500;
+    flex-grow: 1; /* ¡IMPORTANTE! Esto empuja el icono al final */
+    text-align: left;
 }
 
-.faq-box-proj {
+/* El botón cuadrado del + */
+.faq-icon {
+    background-color: #3A506B;
+    color: white;
+    width: 35px;
+    height: 35px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: flex-end;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+    padding-bottom: 4px; /* Pequeño ajuste visual para centrar el + */
+    transition: 0.3s;
+}
+
+/* Efecto Hover al pasar el mouse */
+summary:hover .faq-question {
+    color: #3A506B;
+}
+
+summary:hover .faq-icon {
+    background-color: #5BC0BE; /* Cambia a Teal al pasar el mouse */
+}
+
+/* Contenido oculto que se despliega */
+.faq-content {
+    padding: 10px 0 30px 60px; /* Indentación para que se lea bien */
+    color: #555;
+    line-height: 1.6;
 }
 
 /* --- GALERÍA DE PROYECTOS --- */
@@ -545,6 +588,16 @@ main .botones-table {
     transition: all 0.2s ease;
     cursor: pointer; /* Cursor de mano */
     display: block;
+    position: relative;
+}
+
+.status-dot::after{
+    content: '';
+    position: relative;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
 }
 
 /* Efecto Hover sobre el punto */
