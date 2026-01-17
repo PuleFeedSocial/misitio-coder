@@ -583,10 +583,11 @@ footer li {
 
 /* --- RESPONSIVE DESIGN (MÓVIL) --- */
 @media (max-width: 410px) {
-    header {
+    header{
         flex-direction: column;
         gap: 10px;
         padding-bottom: 10px;
+        height: auto;
     }
 
     nav {
@@ -597,6 +598,7 @@ footer li {
     }
     nav a {
         margin: 0.5rem;
+        font-size: .95rem;
     }
 
     form {
