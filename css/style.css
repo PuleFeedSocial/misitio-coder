@@ -664,7 +664,7 @@ footer li {
     .status-dot::before {
         display: block;
         position: absolute;
-        top: 0;
+        top: -25px;
         left: 50%;
         transform: translateX(-50%);
         font-size: 0.7rem;
