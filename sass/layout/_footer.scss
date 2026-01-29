@@ -1,0 +1,20 @@
+@use '../utilities/variables' as *;
+
+/*FOOTER */
+footer {
+    background-color: $color-dark;
+    color: $color-white;
+    padding: 40px 20px;
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    h4 {
+        padding-bottom: 1rem;
+        color: $color-light-accent;
+    }
+
+    li {
+        padding-bottom: .4rem;
+    }
+}

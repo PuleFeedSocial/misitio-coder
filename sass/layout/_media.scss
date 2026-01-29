@@ -1,0 +1,155 @@
+@use '../utilities/variables' as *;
+/* RESPONSIVE (CELULAR)*/
+@media (max-width: 410px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 10px;
+        height: auto;
+    }
+
+    nav {
+        font-size: .8rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        a {
+            margin: 0.5rem;
+            font-size: .95rem;
+        }
+    }
+
+    form {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .form-section {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .project-board {
+        padding: 10px;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .grid-header {
+        display: none;
+    }
+
+    .grid-table {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .grid-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "tarea tarea tarea"
+            "fecha fecha fecha"
+            "btn1  btn2  btn3";
+        background-color: $color-white;
+        border: 1px solid $border-light;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .cell {
+        border-bottom: none;
+        padding: 5px 0;
+
+        &.task {
+            grid-area: tarea;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: $color-dark;
+            margin-bottom: 5px;
+        }
+
+        &.date {
+            grid-area: fecha;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed $border-light;
+            padding-bottom: 10px;
+        }
+
+        &.status {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            height: 40px;
+            position: relative;
+        }
+    }
+
+    // Selectores :has para posicionar botones en el Grid Area correcto
+    .cell:has(.pending) {
+        grid-area: btn1;
+    }
+
+    .cell:has(.progress) {
+        grid-area: btn2;
+    }
+
+    .cell:has(.finished) {
+        grid-area: btn3;
+    }
+
+    .status-dot::before {
+        display: block;
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.7rem;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .radio-btn.pending+.status-dot::before {
+        content: "Prog.";
+        color: $color-accent;
+    }
+
+    .radio-btn.finished+.status-dot::before {
+        content: "Fin";
+        color: $color-light-accent;
+    }
+
+    .botones-table {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .button {
+        width: 48%;
+    }
+
+    .proyectos {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    .proyecto {
+        width: 100%;
+        margin: 10px 0;
+        height: auto;
+    }
+
+    .faq-box,
+    .text-content,
+    .main-section {
+        align-items: center;
+        padding: 10px;
+    }
+
+    .encontrados {
+        font-size: 25px;
+    }
+}
