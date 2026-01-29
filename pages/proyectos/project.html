@@ -1,134 +1,137 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador de Proyecto</title>
     <link rel="stylesheet" href="../../css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
+
 <body>
     <!-- HEADER -->
-    <header class="bg-white shadow-sm py-2"> 
-    <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center px-4"> 
-        
-        <nav class="d-flex align-items-center flex-wrap justify-content-center py-2 mb-2 mb-md-0">
-            <a href="../../index.html" class="nav-custom-link">Inicio</a>
-            
-            <span class="mx-2 text-muted opacity-50 d-none d-md-inline">|</span>
-            
-            <a href="../proyectos.html" class="nav-custom-link">Proyectos</a>
-            
-            <span class="mx-2 text-muted opacity-50 d-none d-md-inline">|</span>
-            
-            <a href="../acercade.html" class="nav-custom-link">Acerca de</a>
-            
-            <span class="mx-2 text-muted opacity-50 d-none d-md-inline">|</span>
-            
-            <a href="../contacto.html" class="nav-custom-link active">Contacto</a>
-        </nav>
+    <header class="bg-white shadow-sm py-2">
+        <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center px-4">
 
-        <div class="d-flex align-items-center justify-content-center gap-2"> 
-            <span class="user-icon me-2" style="color: #3A506B;">👤</span>
-            <a href="../login-center/login.html" class="btn-custom-main btn-sm-custom">Iniciar Sesión</a>
-            <a href="../login-center/register.html" class="btn-custom-main btn-sm-custom">Registrarse</a>
-        </div>
-    </div>
-</header>
+            <nav class="d-flex align-items-center flex-wrap justify-content-center py-2 mb-2 mb-md-0 navbar-expand-lg">
+                <a href="../../index.html" class="nav-custom-link">Inicio</a>
 
-    <main>  
-      <h1 class="title-project">Titutlo Simbolico (Proyecto)</h1>
-      <div class="project-board">
-        <div class="board-header-title">Estado del Proyecto</div>
-        
-        <div class="grid-table">
-            <div class="grid-header">
-                <div class="header-item">Tarea</div>
-                <div class="header-item">Fecha Inicio</div>
-                <div class="header-item center">Pend.</div>
-                <div class="header-item center">Prog.</div>
-                <div class="header-item center">Fin</div>
-            </div>
+                <span class="mx-2 text-muted opacity-50 d-none d-md-inline">|</span>
 
-            <div class="grid-row">
-                <div class="cell task">Diseñar Wireframes</div>
-                <div class="cell date"><input class="cell date" type="datetime-local"></div>
-                
-                <div class="cell status">
-                    <input type="radio" name="status_1" id="r1_pend" class="radio-btn pending">
-                    <label for="r1_pend" class="status-dot"></label>
-                </div>
-                <div class="cell status">
-                    <input type="radio" name="status_1" id="r1_prog" class="radio-btn progress" checked>
-                    <label for="r1_prog" class="status-dot"></label>
-                </div>
-                <div class="cell status">
-                    <input type="radio" name="status_1" id="r1_fin" class="radio-btn finished">
-                    <label for="r1_fin" class="status-dot"></label>
-                </div>
-            </div>
+                <a href="../proyectos.html" class="nav-custom-link">Proyectos</a>
 
-            <div class="grid-row">
-                <div class="cell task">Configurar Repositorio</div>
-                <div class="cell date"><input class="cell date" type="datetime-local"></div>
-                
-                <div class="cell status">
-                    <input type="radio" name="status_2" id="r2_pend" class="radio-btn pending">
-                    <label for="r2_pend" class="status-dot"></label>
-                </div>
-                <div class="cell status">
-                    <input type="radio" name="status_2" id="r2_prog" class="radio-btn progress">
-                    <label for="r2_prog" class="status-dot"></label>
-                </div>
-                <div class="cell status">
-                    <input type="radio" name="status_2" id="r2_fin" class="radio-btn finished" checked>
-                    <label for="r2_fin" class="status-dot"></label>
-                </div>
-            </div>
+                <span class="mx-2 text-muted opacity-50 d-none d-md-inline">|</span>
 
-            <div class="grid-row">
-                <div class="cell task">Integración de API de Pagos</div>
-                <div class="cell date"><input class="cell date" type="datetime-local"></div>
-                
-                <div class="cell status">
-                    <input type="radio" name="status_3" id="r3_pend" class="radio-btn pending" checked>
-                    <label for="r3_pend" class="status-dot"></label>
-                </div>
-                <div class="cell status">
-                    <input type="radio" name="status_3" id="r3_prog" class="radio-btn progress">
-                    <label for="r3_prog" class="status-dot"></label>
-                </div>
-                <div class="cell status">
-                    <input type="radio" name="status_3" id="r3_fin" class="radio-btn finished">
-                    <label for="r3_fin" class="status-dot"></label>
-                </div>
-            </div>
+                <a href="../acercade.html" class="nav-custom-link">Acerca de</a>
 
-            <div class="grid-row">
-                <div class="cell task">Redacción de Copywriting</div>
-                <div class="cell date"><input class="cell date" type="datetime-local"></div>
-                
-                <div class="cell status">
-                    <input type="radio" name="status_4" id="r4_pend" class="radio-btn pending">
-                    <label for="r4_pend" class="status-dot"></label>
-                </div>
-                <div class="cell status">
-                    <input type="radio" name="status_4" id="r4_prog" class="radio-btn progress" checked>
-                    <label for="r4_prog" class="status-dot"></label>
-                </div>
-                <div class="cell status">
-                    <input type="radio" name="status_4" id="r4_fin" class="radio-btn finished">
-                    <label for="r4_fin" class="status-dot"></label>
-                </div>
+                <span class="mx-2 text-muted opacity-50 d-none d-md-inline">|</span>
+
+                <a href="../contacto.html" class="nav-custom-link active">Contacto</a>
+            </nav>
+
+            <div class="d-flex align-items-center justify-content-center gap-2">
+                <span class="user-icon me-2" style="color: #3A506B;">👤</span>
+                <a href="../login-center/login.html" class="btn-custom-main btn-sm-custom">Iniciar Sesión</a>
+                <a href="../login-center/register.html" class="btn-custom-main btn-sm-custom">Registrarse</a>
             </div>
         </div>
-        <div class="botones-table">
-            <button class="button one">Añadir tarea</button>
-            <button class="button two">Eliminar tarea</button>
+    </header>
+
+    <main>
+        <h1 class="title-project">Titutlo Simbolico (Proyecto)</h1>
+        <div class="project-board">
+            <div class="board-header-title">Estado del Proyecto</div>
+
+            <div class="grid-table">
+                <div class="grid-header">
+                    <div class="header-item">Tarea</div>
+                    <div class="header-item">Fecha Inicio</div>
+                    <div class="header-item center">Pend.</div>
+                    <div class="header-item center">Prog.</div>
+                    <div class="header-item center">Fin</div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="cell task">Diseñar Wireframes</div>
+                    <div class="cell date"><input class="cell date" type="datetime-local"></div>
+
+                    <div class="cell status">
+                        <input type="radio" name="status_1" id="r1_pend" class="radio-btn pending">
+                        <label for="r1_pend" class="status-dot"></label>
+                    </div>
+                    <div class="cell status">
+                        <input type="radio" name="status_1" id="r1_prog" class="radio-btn progress" checked>
+                        <label for="r1_prog" class="status-dot"></label>
+                    </div>
+                    <div class="cell status">
+                        <input type="radio" name="status_1" id="r1_fin" class="radio-btn finished">
+                        <label for="r1_fin" class="status-dot"></label>
+                    </div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="cell task">Configurar Repositorio</div>
+                    <div class="cell date"><input class="cell date" type="datetime-local"></div>
+
+                    <div class="cell status">
+                        <input type="radio" name="status_2" id="r2_pend" class="radio-btn pending">
+                        <label for="r2_pend" class="status-dot"></label>
+                    </div>
+                    <div class="cell status">
+                        <input type="radio" name="status_2" id="r2_prog" class="radio-btn progress">
+                        <label for="r2_prog" class="status-dot"></label>
+                    </div>
+                    <div class="cell status">
+                        <input type="radio" name="status_2" id="r2_fin" class="radio-btn finished" checked>
+                        <label for="r2_fin" class="status-dot"></label>
+                    </div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="cell task">Integración de API de Pagos</div>
+                    <div class="cell date"><input class="cell date" type="datetime-local"></div>
+
+                    <div class="cell status">
+                        <input type="radio" name="status_3" id="r3_pend" class="radio-btn pending" checked>
+                        <label for="r3_pend" class="status-dot"></label>
+                    </div>
+                    <div class="cell status">
+                        <input type="radio" name="status_3" id="r3_prog" class="radio-btn progress">
+                        <label for="r3_prog" class="status-dot"></label>
+                    </div>
+                    <div class="cell status">
+                        <input type="radio" name="status_3" id="r3_fin" class="radio-btn finished">
+                        <label for="r3_fin" class="status-dot"></label>
+                    </div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="cell task">Redacción de Copywriting</div>
+                    <div class="cell date"><input class="cell date" type="datetime-local"></div>
+
+                    <div class="cell status">
+                        <input type="radio" name="status_4" id="r4_pend" class="radio-btn pending">
+                        <label for="r4_pend" class="status-dot"></label>
+                    </div>
+                    <div class="cell status">
+                        <input type="radio" name="status_4" id="r4_prog" class="radio-btn progress" checked>
+                        <label for="r4_prog" class="status-dot"></label>
+                    </div>
+                    <div class="cell status">
+                        <input type="radio" name="status_4" id="r4_fin" class="radio-btn finished">
+                        <label for="r4_fin" class="status-dot"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="botones-table">
+                <button class="button one">Añadir tarea</button>
+                <button class="button two">Eliminar tarea</button>
+            </div>
         </div>
-    </div>
     </main>
-    
+
     <footer>
         <h4>REDES SOCIALES</h4>
         <ul>
@@ -137,6 +140,9 @@
             <li>Correo Electrónico: Administradordeproyectos@dominio.com</li>
         </ul>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 * {
   padding: 0;
   margin: 0;
@@ -32,11 +33,13 @@ main {
   padding: 0 2rem;
   min-height: auto;
 }
+
 .main-section .text-content {
   flex: 2;
   text-align: left;
   padding: 0;
 }
+
 .main-section .text-content h1 {
   margin-bottom: 1.5rem;
   color: #0B132B;
@@ -80,12 +83,15 @@ summary {
   cursor: pointer;
   width: 100%;
 }
+
 summary::-webkit-details-marker {
   display: none;
 }
+
 summary:hover .faq-question {
   color: #3A506B;
 }
+
 summary:hover .faq-icon {
   background-color: #5BC0BE;
 }
@@ -138,6 +144,7 @@ summary:hover .faq-icon {
   flex-direction: column;
   gap: 0.4rem;
 }
+
 .faq-box h3 {
   font-size: 2rem;
   color: #0B132B;
@@ -161,6 +168,7 @@ summary:hover .faq-icon {
   height: auto;
   min-height: 39.9rem;
 }
+
 .proyectos button {
   border: none;
   background: #3A506B;
@@ -191,6 +199,7 @@ summary:hover .faq-icon {
   padding: 20px;
   gap: 20px;
 }
+
 .added button {
   height: 2.4rem;
   width: 12rem;
@@ -211,15 +220,18 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   background-color: #ffffff;
 }
+
 header nav {
   padding: 0.5rem 0;
 }
+
 header nav a {
   text-decoration: none;
   color: #0B132B;
   margin: 0 1rem;
   position: relative;
 }
+
 header nav a:hover {
   color: #5BC0BE;
 }
@@ -236,6 +248,7 @@ header nav a:hover {
   cursor: pointer;
   text-align: center;
 }
+
 .btn-custom-main:hover {
   background-color: #5BC0BE;
   color: #0B132B;
@@ -260,6 +273,7 @@ header nav a:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
 .btn-login:hover,
 .btn-register:hover {
   cursor: pointer;
@@ -277,6 +291,7 @@ header nav a:hover {
   border: none;
   border-radius: 0.3rem;
 }
+
 .button:hover {
   cursor: pointer;
   background: #5BC0BE;
@@ -300,6 +315,7 @@ a[href="proyectos/project.html"] {
   background-color: #3A506B;
   text-decoration: none;
 }
+
 a[href="proyectos/project.html"]:hover {
   cursor: pointer;
   background: #5BC0BE;
@@ -317,10 +333,12 @@ footer {
   width: 100%;
   height: auto;
 }
+
 footer h4 {
   padding-bottom: 1rem;
   color: #6FFFE9;
 }
+
 footer li {
   padding-bottom: 0.4rem;
 }
@@ -365,6 +383,7 @@ footer li {
   display: flex;
   align-items: center;
 }
+
 .header-item.center {
   justify-content: center;
 }
@@ -372,6 +391,7 @@ footer li {
 .grid-row {
   display: contents;
 }
+
 .grid-row:hover .cell {
   background-color: #fafafa;
 }
@@ -384,16 +404,19 @@ footer li {
   align-items: center;
   font-size: 0.95rem;
 }
+
 .cell.task {
   font-weight: 500;
   color: #0B132B;
 }
+
 .cell.date {
   color: #3A506B;
   font-size: 0.85rem;
   height: 25px;
   border: none;
 }
+
 .cell.status {
   justify-content: center;
   position: relative;
@@ -421,6 +444,7 @@ main .botones-table {
   display: block;
   position: relative;
 }
+
 .status-dot::after {
   content: "";
   position: absolute;
@@ -429,70 +453,139 @@ main .botones-table {
   left: -10px;
   right: -10px;
 }
+
 .status-dot:hover {
   transform: scale(1.1);
   border-color: #ccc;
 }
 
-.radio-btn.pending:checked + .status-dot {
+.radio-btn.pending:checked+.status-dot {
   background-color: #3A506B;
   border-color: #3A506B;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.radio-btn.progress:checked + .status-dot {
+.radio-btn.progress:checked+.status-dot {
   background-color: #5BC0BE;
   border-color: #5BC0BE;
   box-shadow: 0 0 8px rgba(91, 192, 190, 0.4);
 }
 
-.radio-btn.finished:checked + .status-dot {
+.radio-btn.finished:checked+.status-dot {
   background-color: #6FFFE9;
   border-color: #6FFFE9;
   box-shadow: 0 0 5px rgba(111, 255, 233, 0.4);
 }
 
 /* RESPONSIVE (CELULAR)*/
-@media (max-width: 410px) {
-  header {
+@media (max-width: 991px) {
+
+  /* --- MENÚ HAMBURGUESA (Tablet y Móvil) --- */
+  header .navbar {
+    padding: 1rem;
+  }
+
+  header .navbar-toggler {
+    border-color: #6FFFE9;
+    background-color: #3A506B;
+    padding: 0.5rem;
+  }
+
+  header .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  header .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(91, 192, 190, 0.5);
+  }
+
+  header .navbar-collapse {
+    background-color: #ffffff;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  header .nav-link {
+    padding: 10px 20px;
+    border-bottom: 1px solid #eeeeee;
+    text-align: center;
+  }
+
+  header .nav-link:hover {
+    background-color: #F9F8F6;
+    color: #5BC0BE !important;
+  }
+
+  /* --- AJUSTES GENERALES (Tablet y Móvil) --- */
+  .main-section {
     flex-direction: column;
-    gap: 10px;
-    padding-bottom: 10px;
-    height: auto;
+    align-items: center;
+    text-align: center;
   }
-  nav {
-    font-size: 0.8rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
+  .main-section .text-content {
+    padding: 0;
+    width: 100%;
   }
-  nav a {
-    margin: 0.5rem;
-    font-size: 0.95rem;
+
+  form {
+    width: 80%;
   }
+
+  .project-board {
+    padding: 15px;
+  }
+
+  .project-board .grid-table {
+    overflow-x: auto;
+    display: block;
+  }
+
+  .project-board .grid-row,
+  .project-board .grid-header {
+    min-width: 600px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 80px 80px 80px;
+  }
+}
+
+/* --- SOLO MÓVIL (Ajustes extra para pantallas muy pequeñas) --- */
+@media (max-width: 576px) {
+  header nav {
+    font-size: 0.9rem;
+  }
+
   form {
     width: 95%;
-    margin: 20px auto;
+    margin: 10px auto;
   }
+
   .form-section {
     height: auto;
-    padding: 20px 0;
+    padding: 30px 0;
   }
+
   .project-board {
-    padding: 10px;
     background: transparent;
     box-shadow: none;
+    padding: 0;
   }
-  .grid-header {
+
+  .project-board .grid-header {
     display: none;
   }
-  .grid-table {
+
+  .project-board .grid-table {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    overflow-x: visible;
   }
-  .grid-row {
+
+  .project-board .grid-row {
     display: grid;
+    min-width: 0;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "tarea tarea tarea" "fecha fecha fecha" "btn1  btn2  btn3";
     background-color: #ffffff;
@@ -500,40 +593,39 @@ main .botones-table {
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 0;
   }
+
   .cell {
     border-bottom: none;
     padding: 5px 0;
   }
+
   .cell.task {
     grid-area: tarea;
     font-size: 1.1rem;
-    font-weight: 700;
-    color: #0B132B;
     margin-bottom: 5px;
   }
+
   .cell.date {
     grid-area: fecha;
     margin-bottom: 15px;
     border-bottom: 1px dashed #eeeeee;
     padding-bottom: 10px;
   }
-  .cell.status {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    height: 40px;
-    position: relative;
-  }
+
   .cell:has(.pending) {
     grid-area: btn1;
   }
+
   .cell:has(.progress) {
     grid-area: btn2;
   }
+
   .cell:has(.finished) {
     grid-area: btn3;
   }
+
   .status-dot::before {
     display: block;
     position: absolute;
@@ -542,42 +634,33 @@ main .botones-table {
     transform: translateX(-50%);
     font-size: 0.7rem;
     font-weight: 600;
-    white-space: nowrap;
   }
-  .radio-btn.pending + .status-dot::before {
+
+  .radio-btn.pending+.status-dot::before {
     content: "Prog.";
     color: #5BC0BE;
   }
-  .radio-btn.finished + .status-dot::before {
+
+  .radio-btn.finished+.status-dot::before {
     content: "Fin";
     color: #6FFFE9;
   }
-  .botones-table {
-    justify-content: center;
-    width: 100%;
-  }
-  .button {
-    width: 48%;
-  }
+
   .proyectos {
     width: 95%;
-    padding: 0 10px;
   }
+
   .proyecto {
     width: 100%;
     margin: 10px 0;
-    height: auto;
   }
-  .faq-box,
-  .text-content,
-  .main-section {
-    align-items: center;
+
+  .main-section,
+  .faq-box {
     padding: 10px;
   }
-  .encontrados {
-    font-size: 25px;
-  }
 }
+
 form {
   width: 30rem;
   border: 1px solid #eeeeee;
@@ -590,11 +673,13 @@ form {
   border-radius: 8px;
   background-color: #ffffff;
 }
+
 form label {
   font-weight: bold;
   margin-bottom: 5px;
   color: #1C2541;
 }
+
 form input:not([type=submit]),
 form textarea {
   width: 100%;
@@ -604,11 +689,13 @@ form textarea {
   box-sizing: border-box;
   background-color: #f8f9fa;
 }
+
 form input:not([type=submit]).form-control:focus,
 form textarea.form-control:focus {
   box-shadow: 0 0 0 0.25rem rgba(91, 192, 190, 0.2);
   border-color: #5BC0BE;
 }
+
 form input[type=submit] {
   background: #3A506B;
   color: #ffffff;
@@ -619,6 +706,7 @@ form input[type=submit] {
   margin-top: 10px;
   transition: 0.3s;
 }
+
 form input[type=submit]:hover {
   cursor: pointer;
   background: #5BC0BE;

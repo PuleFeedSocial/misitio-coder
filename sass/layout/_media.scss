@@ -1,53 +1,113 @@
 @use '../utilities/variables' as *;
 /* RESPONSIVE (CELULAR)*/
-@media (max-width: 410px) {
-    header {
-        flex-direction: column;
-        gap: 10px;
-        padding-bottom: 10px;
-        height: auto;
+@media (max-width: 991px) {
+
+    /* --- MENÚ HAMBURGUESA (Tablet y Móvil) --- */
+    header .navbar {
+        padding: 1rem;
     }
 
-    nav {
-        font-size: .8rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    header .navbar-toggler {
+        border-color: $color-light-accent;
+        background-color: $color-primary;
+        padding: 0.5rem;
+    }
 
-        a {
-            margin: 0.5rem;
-            font-size: .95rem;
-        }
+    header .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    header .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.2rem rgba($color-accent, 0.5);
+    }
+
+    header .navbar-collapse {
+        background-color: $color-white;
+        margin-top: 10px;
+        border-radius: 4px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header .nav-link {
+        padding: 10px 20px;
+        border-bottom: 1px solid $border-light;
+        text-align: center;
+    }
+
+    header .nav-link:hover {
+        background-color: $bg-body;
+        color: $color-accent !important;
+    }
+
+    /* --- AJUSTES GENERALES (Tablet y Móvil) --- */
+    .main-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .main-section .text-content {
+        padding: 0;
+        width: 100%;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    .project-board {
+        padding: 15px;
+    }
+
+    .project-board .grid-table {
+        overflow-x: auto;
+        display: block;
+    }
+
+    .project-board .grid-row,
+    .project-board .grid-header {
+        min-width: 600px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 80px 80px 80px;
+    }
+}
+
+/* --- SOLO MÓVIL (Ajustes extra para pantallas muy pequeñas) --- */
+@media (max-width: 576px) {
+    header nav {
+        font-size: 0.9rem;
     }
 
     form {
         width: 95%;
-        margin: 20px auto;
+        margin: 10px auto;
     }
 
     .form-section {
         height: auto;
-        padding: 20px 0;
+        padding: 30px 0;
     }
 
     .project-board {
-        padding: 10px;
         background: transparent;
         box-shadow: none;
+        padding: 0;
     }
 
-    .grid-header {
+    .project-board .grid-header {
         display: none;
     }
 
-    .grid-table {
+    .project-board .grid-table {
         display: flex;
         flex-direction: column;
         gap: 15px;
+        overflow-x: visible;
     }
 
-    .grid-row {
+    .project-board .grid-row {
         display: grid;
+        min-width: 0;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas:
             "tarea tarea tarea"
@@ -58,37 +118,27 @@
         border-radius: 10px;
         padding: 15px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        margin-bottom: 0;
     }
 
     .cell {
         border-bottom: none;
         padding: 5px 0;
-
-        &.task {
-            grid-area: tarea;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: $color-dark;
-            margin-bottom: 5px;
-        }
-
-        &.date {
-            grid-area: fecha;
-            margin-bottom: 15px;
-            border-bottom: 1px dashed $border-light;
-            padding-bottom: 10px;
-        }
-
-        &.status {
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            height: 40px;
-            position: relative;
-        }
     }
 
-    // Selectores :has para posicionar botones en el Grid Area correcto
+    .cell.task {
+        grid-area: tarea;
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    .cell.date {
+        grid-area: fecha;
+        margin-bottom: 15px;
+        border-bottom: 1px dashed $border-light;
+        padding-bottom: 10px;
+    }
+
     .cell:has(.pending) {
         grid-area: btn1;
     }
@@ -109,7 +159,6 @@
         transform: translateX(-50%);
         font-size: 0.7rem;
         font-weight: 600;
-        white-space: nowrap;
     }
 
     .radio-btn.pending+.status-dot::before {
@@ -122,34 +171,17 @@
         color: $color-light-accent;
     }
 
-    .botones-table {
-        justify-content: center;
-        width: 100%;
-    }
-
-    .button {
-        width: 48%;
-    }
-
     .proyectos {
         width: 95%;
-        padding: 0 10px;
     }
 
     .proyecto {
         width: 100%;
         margin: 10px 0;
-        height: auto;
     }
 
-    .faq-box,
-    .text-content,
-    .main-section {
-        align-items: center;
+    .main-section,
+    .faq-box {
         padding: 10px;
-    }
-
-    .encontrados {
-        font-size: 25px;
     }
 }
