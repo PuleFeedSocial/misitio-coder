@@ -1,0 +1,753 @@
+$color-dark: #0B132B;
+$color-navy: #1C2541;
+$color-primary: #3A506B;
+$color-accent: #5BC0BE;
+$color-light-accent: #6FFFE9;
+$color-white: #ffffff;
+$bg-body: #F9F8F6;
+$border-light: #eeeeee;
+
+// Tipografías
+$font-primary: "BBH Bartle", sans-serif;
+$font-secondary: Arial, sans-serif;
+
+/* ESTILOS GLOBALES */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font-primary;
+}
+
+body {
+    font-family: $font-secondary;
+    background-color: $bg-body;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: $color-dark;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+/* --- 3. HEADER Y NAVEGACIÓN --- */
+header {
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    background-color: $color-white;
+
+    nav {
+        padding: 0.5rem 0;
+
+        a {
+            text-decoration: none;
+            color: $color-dark;
+            margin: 0 1rem;
+            position: relative;
+
+            &:hover {
+                color: $color-accent;
+            }
+        }
+    }
+}
+
+// BOTONES
+.btn-custom-main {
+    background-color: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+        background-color: $color-accent;
+        color: $color-dark;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.text-custom-blue {
+    color: $color-primary;
+}
+
+// Acciones de Usuario (Login/Register)
+.user-actions {
+    padding: 10px;
+}
+
+.btn-login,
+.btn-register {
+    background-color: $color-primary;
+    padding: .5rem;
+    border: none;
+    border-radius: 2px;
+    color: $color-white;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        cursor: pointer;
+        background: $color-accent;
+        color: $color-dark;
+        transition: .2s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+}
+
+// Botón Pequeño Específico (Ancho fijo)
+.button {
+    width: 120px;
+    height: 30px;
+    background: $color-primary;
+    color: $color-white;
+    border: none;
+    border-radius: .3rem;
+
+    &:hover {
+        cursor: pointer;
+        background: $color-accent;
+        color: $color-dark;
+        transition: .2s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+}
+
+.buton {
+    padding: 1rem;
+    border: 1px solid $color-navy;
+    border-radius: 10px;
+    color: $color-primary;
+}
+
+// Enlace específico a Proyectos
+a[href="proyectos/project.html"] {
+    padding: 1rem;
+    border: 1px solid $color-navy;
+    border-radius: 10px;
+    color: $color-white;
+    background-color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+        cursor: pointer;
+        background: $color-accent;
+        color: $color-dark;
+        transition: .2s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+}
+
+/* --- 5. SECCIÓN PRINCIPAL (LAYOUT) --- */
+.main-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    min-height: auto;
+
+    .text-content {
+        flex: 2;
+        text-align: left;
+        padding: 0;
+
+        h1 {
+            margin-bottom: 1.5rem;
+            color: $color-dark;
+        }
+    }
+}
+
+.encontrados {
+    margin: 20px;
+}
+
+.text-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.blue {
+    color: $color-primary;
+}
+
+main .title-project {
+    padding: 20px;
+    color: $color-navy;
+}
+
+/* --- 6. PREGUNTAS FRECUENTES (FAQ) --- */
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid $border-light;
+    margin-bottom: 10px;
+}
+
+summary {
+    list-style: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 25px 0;
+    cursor: pointer;
+    width: 100%;
+
+    &::-webkit-details-marker {
+        display: none;
+    }
+
+    &:hover {
+        .faq-question {
+            color: $color-primary;
+        }
+
+        .faq-icon {
+            background-color: $color-accent;
+        }
+    }
+}
+
+.faq-number {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: $color-primary;
+    margin-right: 25px;
+    flex-shrink: 0;
+}
+
+.faq-question {
+    font-size: 1.1rem;
+    color: $color-dark;
+    font-weight: 500;
+    text-align: left;
+    margin-right: 15px;
+}
+
+.faq-icon {
+    background-color: $color-primary;
+    color: $color-white;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+    padding-bottom: 4px;
+    transition: 0.3s;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.faq-content {
+    padding: 10px 0 30px 60px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.faq-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .4rem;
+
+    h3 {
+        font-size: 2rem;
+        color: $color-dark;
+    }
+}
+
+.faq-box-proj {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* --- 7. GALERÍA DE PROYECTOS --- */
+.proyectos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: 0 auto;
+    height: auto;
+    min-height: 39.9rem;
+
+    button {
+        border: none;
+        background: $color-primary;
+        color: $color-white;
+        width: 90%;
+        height: 2.6rem;
+        border-radius: 2px;
+        display: block;
+        margin: 1rem auto;
+    }
+}
+
+.proyecto {
+    width: 20rem;
+    height: 20rem;
+    border: 2px solid $border-light;
+    border-radius: .5rem;
+    margin: 1.3rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $color-white;
+}
+
+.added {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    gap: 20px;
+
+    button {
+        height: 2.4rem;
+        width: 12rem;
+    }
+}
+
+.image-placeholder img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    position: relative;
+}
+
+/*FORMULARIOS */
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(91, 192, 190, 0.2);
+    border-color: $color-accent;
+}
+
+.footer-custom {
+    background-color: $color-dark;
+    width: 100%;
+}
+
+.footer-title {
+    color: $color-light-accent;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.title-contacto {
+    margin: 20px;
+    color: $color-navy;
+}
+
+.text-contact {
+    padding: 10px;
+}
+
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35.6rem;
+}
+
+.form-section-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35.6rem;
+
+    form {
+        width: 22rem;
+        border: 1px solid $border-light;
+        padding: 20px;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        height: auto;
+        border-radius: 8px;
+        background-color: $color-white;
+    }
+}
+
+form {
+    width: 30rem;
+    border: 1px solid $border-light;
+    padding: 20px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+    border-radius: 8px;
+    background-color: $color-white;
+
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: $color-navy;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $border-light;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #f8f9fa;
+    }
+
+    input[type="submit"] {
+        background: $color-primary;
+        color: $color-white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+
+        &:hover {
+            cursor: pointer;
+            background: $color-accent;
+            color: $color-dark;
+            transition: .2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+
+/*TABLERO DE GESTIÓN*/
+.project-board {
+    width: 100%;
+    max-width: 1000px;
+    background-color: $color-white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.board-header-title {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $color-dark;
+}
+
+.grid-table {
+    display: grid;
+    grid-template-columns: 2fr 1fr 80px 80px 80px;
+    gap: 10px;
+}
+
+.grid-header {
+    display: contents;
+}
+
+.header-item {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $color-primary;
+    font-weight: 700;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $border-light;
+    display: flex;
+    align-items: center;
+
+    &.center {
+        justify-content: center;
+    }
+}
+
+.grid-row {
+    display: contents;
+
+    &:hover .cell {
+        background-color: #fafafa;
+    }
+}
+
+.cell {
+    background-color: $color-white;
+    padding: 16px 10px;
+    border-bottom: 1px solid $border-light;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+
+    &.task {
+        font-weight: 500;
+        color: $color-dark;
+    }
+
+    &.date {
+        color: $color-primary;
+        font-size: 0.85rem;
+        height: 25px;
+        border: none;
+    }
+
+    &.status {
+        justify-content: center;
+        position: relative;
+    }
+}
+
+main .botones-table {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin: 1rem auto;
+}
+
+.radio-btn {
+    display: none !important;
+}
+
+.status-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid $border-light;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: block;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        bottom: -10px;
+        left: -10px;
+        right: -10px;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        border-color: #ccc;
+    }
+}
+
+// Lógica de botones de radio (Exacta)
+.radio-btn.pending:checked+.status-dot {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.radio-btn.progress:checked+.status-dot {
+    background-color: $color-accent;
+    border-color: $color-accent;
+    box-shadow: 0 0 8px rgba(91, 192, 190, 0.4);
+}
+
+.radio-btn.finished:checked+.status-dot {
+    background-color: $color-light-accent;
+    border-color: $color-light-accent;
+    box-shadow: 0 0 5px rgba(111, 255, 233, 0.4);
+}
+
+/*FOOTER */
+footer {
+    background-color: $color-dark;
+    color: $color-white;
+    padding: 40px 20px;
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    h4 {
+        padding-bottom: 1rem;
+        color: $color-light-accent;
+    }
+
+    li {
+        padding-bottom: .4rem;
+    }
+}
+
+/* RESPONSIVE (CELULAR)*/
+@media (max-width: 410px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 10px;
+        height: auto;
+    }
+
+    nav {
+        font-size: .8rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        a {
+            margin: 0.5rem;
+            font-size: .95rem;
+        }
+    }
+
+    form {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .form-section {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .project-board {
+        padding: 10px;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .grid-header {
+        display: none;
+    }
+
+    .grid-table {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .grid-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "tarea tarea tarea"
+            "fecha fecha fecha"
+            "btn1  btn2  btn3";
+        background-color: $color-white;
+        border: 1px solid $border-light;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .cell {
+        border-bottom: none;
+        padding: 5px 0;
+
+        &.task {
+            grid-area: tarea;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: $color-dark;
+            margin-bottom: 5px;
+        }
+
+        &.date {
+            grid-area: fecha;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed $border-light;
+            padding-bottom: 10px;
+        }
+
+        &.status {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            height: 40px;
+            position: relative;
+        }
+    }
+
+    // Selectores :has para posicionar botones en el Grid Area correcto
+    .cell:has(.pending) {
+        grid-area: btn1;
+    }
+
+    .cell:has(.progress) {
+        grid-area: btn2;
+    }
+
+    .cell:has(.finished) {
+        grid-area: btn3;
+    }
+
+    .status-dot::before {
+        display: block;
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.7rem;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .radio-btn.pending+.status-dot::before {
+        content: "Prog.";
+        color: $color-accent;
+    }
+
+    .radio-btn.finished+.status-dot::before {
+        content: "Fin";
+        color: $color-light-accent;
+    }
+
+    .botones-table {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .button {
+        width: 48%;
+    }
+
+    .proyectos {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    .proyecto {
+        width: 100%;
+        margin: 10px 0;
+        height: auto;
+    }
+
+    .faq-box,
+    .text-content,
+    .main-section {
+        align-items: center;
+        padding: 10px;
+    }
+
+    .encontrados {
+        font-size: 25px;
+    }
+}
