@@ -22,7 +22,7 @@ main {
   width: 100%;
 }
 
-/* --- 3. HEADER Y NAVEGACIÓN --- */
+/*HEADER Y NAVEGACIÓN*/
 header {
   width: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -125,7 +125,7 @@ a[href="proyectos/project.html"]:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* --- 5. SECCIÓN PRINCIPAL (LAYOUT) --- */
+/*SECCIÓN PRINCIPAL (LAYOUT)*/
 .main-section {
   display: flex;
   justify-content: space-between;
@@ -165,7 +165,7 @@ main .title-project {
   color: #1C2541;
 }
 
-/* --- 6. PREGUNTAS FRECUENTES (FAQ) --- */
+/*PREGUNTAS FRECUENTES (FAQ) */
 .faq-container {
   max-width: 900px;
   margin: 0 auto;
@@ -255,7 +255,7 @@ summary:hover .faq-icon {
   align-items: flex-end;
 }
 
-/* --- 7. GALERÍA DE PROYECTOS --- */
+/*GALERÍA DE PROYECTOS*/
 .proyectos {
   display: flex;
   justify-content: space-around;
