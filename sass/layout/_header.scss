@@ -1,22 +1,43 @@
 @use '../utilities/variables' as *;
 
-/*HEADER Y NAVEGACIÓN*/
 header {
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: $shadow-soft;
     background-color: $color-white;
 
-    nav {
+
+    .navbar {
+        background-color: $color-white !important;
         padding: 0.5rem 0;
+    }
 
-        a {
-            text-decoration: none;
-            color: $color-dark;
-            margin: 0 1rem;
-            position: relative;
 
-            &:hover {
-                color: $color-accent;
+    .nav-custom-link {
+        text-decoration: none;
+        color: $color-dark;
+        margin: 0 1rem;
+        position: relative;
+        padding-bottom: 5px;
+        transition: color 0.3s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: $color-accent;
+            transition: all 0.3s $ease-elegant;
+            transform: translateX(-50%);
+        }
+
+        &.active,
+        &:hover {
+            color: $color-primary;
+
+            &::after {
+                width: 100%;
             }
         }
     }

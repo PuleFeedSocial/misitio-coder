@@ -1,82 +1,75 @@
 @use '../utilities/variables' as *;
-/* RESPONSIVE (CELULAR)*/
+
 @media (max-width: 991px) {
 
-    /* --- MENÚ HAMBURGUESA (Tablet y Móvil) --- */
-    header .navbar {
-        padding: 1rem;
+    header {
+        height: auto;
+        padding-bottom: 10px;
+
+        .container-fluid {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav {
+            justify-content: center;
+            flex-wrap: wrap;
+
+            a {
+                margin: 0.5rem;
+                font-size: 1rem;
+            }
+        }
     }
 
-    header .navbar-toggler {
-        border-color: $color-light-accent;
-        background-color: $color-primary;
-        padding: 0.5rem;
-    }
 
-    header .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-
-    header .navbar-toggler:focus {
-        box-shadow: 0 0 0 0.2rem rgba($color-accent, 0.5);
-    }
-
-    header .navbar-collapse {
-        background-color: $color-white;
-        margin-top: 10px;
-        border-radius: 4px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    header .nav-link {
-        padding: 10px 20px;
-        border-bottom: 1px solid $border-light;
-        text-align: center;
-    }
-
-    header .nav-link:hover {
-        background-color: $bg-body;
-        color: $color-accent !important;
-    }
-
-    /* --- AJUSTES GENERALES (Tablet y Móvil) --- */
     .main-section {
         flex-direction: column;
         align-items: center;
         text-align: center;
+
+        .text-content {
+            padding: 0;
+            width: 100%;
+        }
+
+
+        .image-placeholder {
+            margin-top: 20px;
+        }
     }
 
-    .main-section .text-content {
-        padding: 0;
-        width: 100%;
-    }
 
     form {
         width: 80%;
     }
 
+
     .project-board {
         padding: 15px;
-    }
 
-    .project-board .grid-table {
-        overflow-x: auto;
-        display: block;
-    }
+        .grid-table {
+            overflow-x: auto;
+            display: block;
+        }
 
-    .project-board .grid-row,
-    .project-board .grid-header {
-        min-width: 600px;
-        display: grid;
-        grid-template-columns: 2fr 1fr 80px 80px 80px;
+        .grid-row,
+        .grid-header {
+            min-width: 600px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 80px 80px 80px;
+        }
     }
 }
 
-/* --- SOLO MÓVIL (Ajustes extra para pantallas muy pequeñas) --- */
+
 @media (max-width: 576px) {
+
+
     header nav {
         font-size: 0.9rem;
     }
+
 
     form {
         width: 95%;
@@ -88,87 +81,91 @@
         padding: 30px 0;
     }
 
+
     .project-board {
         background: transparent;
         box-shadow: none;
         padding: 0;
-    }
 
-    .project-board .grid-header {
-        display: none;
-    }
+        .grid-header {
+            display: none;
+        }
 
-    .project-board .grid-table {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        overflow-x: visible;
-    }
 
-    .project-board .grid-row {
-        display: grid;
-        min-width: 0;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas:
-            "tarea tarea tarea"
-            "fecha fecha fecha"
-            "btn1  btn2  btn3";
-        background-color: $color-white;
-        border: 1px solid $border-light;
-        border-radius: 10px;
-        padding: 15px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        margin-bottom: 0;
-    }
+        .grid-table {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow-x: visible;
 
-    .cell {
-        border-bottom: none;
-        padding: 5px 0;
-    }
+            .grid-row {
+                display: grid;
+                min-width: 0;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-areas:
+                    "tarea tarea tarea"
+                    "fecha fecha fecha"
+                    "btn1  btn2  btn3";
+                background-color: $color-white;
+                border: 1px solid $border-light;
+                border-radius: 10px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+                margin-bottom: 0;
+            }
 
-    .cell.task {
-        grid-area: tarea;
-        font-size: 1.1rem;
-        margin-bottom: 5px;
-    }
+            .cell {
+                border-bottom: none;
+                padding: 5px 0;
+            }
 
-    .cell.date {
-        grid-area: fecha;
-        margin-bottom: 15px;
-        border-bottom: 1px dashed $border-light;
-        padding-bottom: 10px;
-    }
+            .cell.task {
+                grid-area: tarea;
+                font-size: 1.1rem;
+                margin-bottom: 5px;
+            }
 
-    .cell:has(.pending) {
-        grid-area: btn1;
-    }
+            .cell.date {
+                grid-area: fecha;
+                margin-bottom: 15px;
+                border-bottom: 1px dashed $border-light;
+                padding-bottom: 10px;
+            }
 
-    .cell:has(.progress) {
-        grid-area: btn2;
-    }
 
-    .cell:has(.finished) {
-        grid-area: btn3;
-    }
+            .cell:has(.pending) {
+                grid-area: btn1;
+            }
 
-    .status-dot::before {
-        display: block;
-        position: absolute;
-        top: -25px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 0.7rem;
-        font-weight: 600;
-    }
+            .cell:has(.progress) {
+                grid-area: btn2;
+            }
 
-    .radio-btn.pending+.status-dot::before {
-        content: "Prog.";
-        color: $color-accent;
-    }
+            .cell:has(.finished) {
+                grid-area: btn3;
+            }
 
-    .radio-btn.finished+.status-dot::before {
-        content: "Fin";
-        color: $color-light-accent;
+
+            .status-dot::before {
+                display: block;
+                position: absolute;
+                top: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 0.7rem;
+                font-weight: 600;
+            }
+
+            .radio-btn.pending+.status-dot::before {
+                content: "Prog.";
+                color: $color-accent;
+            }
+
+            .radio-btn.finished+.status-dot::before {
+                content: "Fin";
+                color: $color-light-accent;
+            }
+        }
     }
 
     .proyectos {

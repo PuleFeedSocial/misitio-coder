@@ -116,7 +116,6 @@ main .botones-table {
     }
 }
 
-// Lógica de botones de radio (Exacta)
 .radio-btn.pending:checked+.status-dot {
     background-color: $color-primary;
     border-color: $color-primary;

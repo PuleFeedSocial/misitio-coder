@@ -1,3 +1,4 @@
+// COLORES
 $color-dark: #0B132B;
 $color-navy: #1C2541;
 $color-primary: #3A506B;
@@ -6,5 +7,56 @@ $color-light-accent: #6FFFE9;
 $color-white: #ffffff;
 $bg-body: #F9F8F6;
 $border-light: #eeeeee;
-$font-primary: 'Poppins', sans-serif;
-$font-secondary: 'Poppins', sans-serif;
+$shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+// FUENTES
+$font-primary: "BBH Bartle", sans-serif;
+$font-secondary: Arial, sans-serif;
+
+//ANIMACIONES y TRANSICIONES
+
+$ease-elegant: cubic-bezier(0.4, 0, 0.2, 1);
+
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin smooth-transition {
+    transition: all 0.3s $ease-elegant;
+}
+
+@mixin hover-effect {
+    cursor: pointer;
+    background-color: $color-accent;
+    color: $color-dark;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba($color-accent, 0.3);
+    @include smooth-transition;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

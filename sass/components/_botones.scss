@@ -1,92 +1,78 @@
-@use '../utilities/variables' as *;
+@use "../utilities/variables" as *;
 
-// BOTONES
-.btn-custom-main {
-    background-color: $color-primary;
-    color: $color-white;
-    text-decoration: none;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    display: inline-block;
-    transition: 0.3s;
-    cursor: pointer;
-    text-align: center;
+@mixin animacion-elegante {
+    position: relative;
+    transition: all 0.3s $ease-elegant;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     &:hover {
         background-color: $color-accent;
         color: $color-dark;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba($color-accent, 0.3);
+        cursor: pointer;
+        border-color: transparent;
+    }
+
+    &:active {
+        transform: translateY(-1px);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: 0.1s;
     }
 }
 
-.text-custom-blue {
-    color: $color-primary;
+%btn-base {
+    background-color: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+
+    @include animacion-elegante;
 }
 
-// Acciones de Usuario (Login/Register)
-.user-actions {
-    padding: 10px;
+.btn-custom-main {
+    @extend %btn-base;
+    padding: 8px 16px;
+    border-radius: 4px;
 }
 
 .btn-login,
 .btn-register {
-    background-color: $color-primary;
+    @extend %btn-base;
     padding: .5rem;
-    border: none;
     border-radius: 2px;
-    color: $color-white;
-    text-decoration: none;
-    cursor: pointer;
-
-    &:hover {
-        cursor: pointer;
-        background: $color-accent;
-        color: $color-dark;
-        transition: .2s;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
 }
 
-// Botón Pequeño Específico (Ancho fijo)
+
 .button {
+    @extend %btn-base;
     width: 120px;
     height: 30px;
-    background: $color-primary;
-    color: $color-white;
-    border: none;
     border-radius: .3rem;
-
-    &:hover {
-        cursor: pointer;
-        background: $color-accent;
-        color: $color-dark;
-        transition: .2s;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.buton {
+.btn-project-link {
+    @extend %btn-base;
     padding: 1rem;
     border: 1px solid $color-navy;
     border-radius: 10px;
-    color: $color-primary;
-}
-
-// Enlace específico a Proyectos
-a[href="proyectos/project.html"] {
-    padding: 1rem;
-    border: 1px solid $color-navy;
-    border-radius: 10px;
-    color: $color-white;
-    background-color: $color-primary;
-    text-decoration: none;
 
     &:hover {
-        cursor: pointer;
-        background: $color-accent;
-        color: $color-dark;
-        transition: .2s;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border-color: transparent;
     }
+}
+
+
+form input[type="submit"] {
+    @extend %btn-base;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 100%;
 }

@@ -1,22 +1,16 @@
 @use '../utilities/variables' as *;
-@use '../base/tipografias';
 
 body {
-    font-family: $font-secondary;
     background-color: $bg-body;
     overflow-x: hidden;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    color: $color-dark;
+    // Eliminamos 'justify-content: space-between' como pidió Santi.
+    // Con main flex: 1 es suficiente.
 }
 
-main {
-    flex: 1;
-    width: 100%;
-}
-
-/*SECCIÓN PRINCIPAL (LAYOUT)*/
+// --- SECCIÓN PRINCIPAL ---
 .main-section {
     display: flex;
     justify-content: space-between;
@@ -26,7 +20,6 @@ main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 2rem;
-    min-height: auto;
 
     .text-content {
         flex: 2;
@@ -35,104 +28,11 @@ main {
 
         h1 {
             margin-bottom: 1.5rem;
-            color: $color-dark;
         }
     }
 }
 
-.encontrados {
-    margin: 20px;
-}
-
-.text-content {
-    padding: 20px;
-    text-align: center;
-}
-
-.blue {
-    color: $color-primary;
-}
-
-main .title-project {
-    padding: 20px;
-    color: $color-navy;
-}
-
-/*PREGUNTAS FRECUENTES (FAQ) */
-.faq-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    border-bottom: 1px solid $border-light;
-    margin-bottom: 10px;
-}
-
-summary {
-    list-style: none;
-    display: flex !important;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 25px 0;
-    cursor: pointer;
-    width: 100%;
-
-    &::-webkit-details-marker {
-        display: none;
-    }
-
-    &:hover {
-        .faq-question {
-            color: $color-primary;
-        }
-
-        .faq-icon {
-            background-color: $color-accent;
-        }
-    }
-}
-
-.faq-number {
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: $color-primary;
-    margin-right: 25px;
-    flex-shrink: 0;
-}
-
-.faq-question {
-    font-size: 1.1rem;
-    color: $color-dark;
-    font-weight: 500;
-    text-align: left;
-    margin-right: 15px;
-}
-
-.faq-icon {
-    background-color: $color-primary;
-    color: $color-white;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 1;
-    padding-bottom: 4px;
-    transition: 0.3s;
-    margin-left: auto;
-    flex-shrink: 0;
-}
-
-.faq-content {
-    padding: 10px 0 30px 60px;
-    color: #555;
-    line-height: 1.6;
-}
-
+// --- BARRA LATERAL (FAQ) ---
 .faq-box {
     flex: 1;
     display: flex;
@@ -143,70 +43,130 @@ summary {
 
     h3 {
         font-size: 2rem;
-        color: $color-dark;
+        margin-bottom: 10px;
     }
 }
 
-.faq-box-proj {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+// --- IMAGEN PRINCIPAL ---
+.image-placeholder {
+    margin-top: 20px;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+        position: relative;
+    }
 }
 
-/*GALERÍA DE PROYECTOS*/
+// --- OTRAS SECCIONES ---
+.form-section,
+.form-section-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35.6rem;
+}
+
+.form-section-2 form {
+    width: 22rem;
+}
+
+// Cards Proyectos
 .proyectos {
     display: flex;
     justify-content: space-around;
-    align-items: center;
     flex-wrap: wrap;
     width: 75%;
     margin: 0 auto;
-    height: auto;
     min-height: 39.9rem;
-
-    button {
-        border: none;
-        background: $color-primary;
-        color: $color-white;
-        width: 90%;
-        height: 2.6rem;
-        border-radius: 2px;
-        display: block;
-        margin: 1rem auto;
-    }
 }
 
 .proyecto {
     width: 20rem;
     height: 20rem;
-    border: 2px solid $border-light;
+    border: 1px solid rgba($border-light, 0.6);
+    background-color: $color-white;
     border-radius: .5rem;
     margin: 1.3rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: $color-white;
+    transition: all 0.4s $ease-elegant;
+
+    &:hover {
+        transform: translateY(-10px);
+        border-color: transparent;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+}
+
+// FAQ Page
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+
+    .faq-item {
+        border-bottom: 1px solid $border-light;
+        margin-bottom: 10px;
+
+        summary {
+            padding: 25px 0;
+            cursor: pointer;
+            list-style: none;
+            display: flex !important;
+            align-items: center;
+
+            &::-webkit-details-marker {
+                display: none;
+            }
+
+            .faq-icon {
+                background-color: $color-primary;
+                color: $color-white;
+                width: 35px;
+                height: 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 4px;
+                transition: 0.3s;
+                margin-left: auto;
+            }
+
+            &:hover {
+                .faq-question {
+                    color: $color-primary;
+                }
+
+                .faq-icon {
+                    background-color: $color-accent;
+                }
+            }
+        }
+    }
 }
 
 .added {
     display: flex;
     justify-content: flex-end;
-    padding: 20px;
+    align-items: center;
     gap: 20px;
-
-    button {
-        height: 2.4rem;
-        width: 12rem;
-    }
+    padding: 20px 0;
+    width: 75%;
+    margin: 0 auto;
 }
 
-.image-placeholder img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-    position: relative;
+.added button {
+    background-color: $color-primary;
+    color: $color-white;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
 }

@@ -1,2 +1,29 @@
-$font-primary: "BBH Bartle", sans-serif;
-$font-secondary: Arial, sans-serif;
+@use '../utilities/variables' as *;
+
+* {
+    font-family: $font-primary;
+}
+
+body {
+    font-family: $font-secondary;
+    color: $color-dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $color-dark;
+}
+
+.text-custom-blue,
+.blue {
+    color: $color-primary;
+}
+
+.footer-title {
+    font-weight: bold;
+    letter-spacing: 1px;
+}

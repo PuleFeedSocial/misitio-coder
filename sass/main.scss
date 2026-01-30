@@ -1,10 +1,9 @@
-@use 'utilities/variables' as *;
 @use 'base/reset';
 @use 'base/tipografias';
 @use 'layout/body';
 @use 'layout/header';
-@use 'components/botones';
 @use 'layout/footer';
 @use 'layout/table';
-@use 'layout/media';
+@use 'components/botones';
 @use 'components/form';
+@use 'layout/media';

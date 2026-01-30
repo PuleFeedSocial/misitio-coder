@@ -1,13 +1,16 @@
 @use '../utilities/variables' as *;
 
-/*FOOTER */
+.footer-custom {
+    background-color: $color-dark;
+    width: 100%;
+}
+
 footer {
     background-color: $color-dark;
     color: $color-white;
     padding: 40px 20px;
     position: relative;
     width: 100%;
-    height: auto;
 
     h4 {
         padding-bottom: 1rem;
