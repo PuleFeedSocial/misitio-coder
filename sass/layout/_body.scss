@@ -6,11 +6,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    // Eliminamos 'justify-content: space-between' como pidió Santi.
-    // Con main flex: 1 es suficiente.
 }
 
-// --- SECCIÓN PRINCIPAL ---
 .main-section {
     display: flex;
     justify-content: space-between;
@@ -32,7 +29,6 @@ body {
     }
 }
 
-// --- BARRA LATERAL (FAQ) ---
 .faq-box {
     flex: 1;
     display: flex;
@@ -47,7 +43,6 @@ body {
     }
 }
 
-// --- IMAGEN PRINCIPAL ---
 .image-placeholder {
     margin-top: 20px;
 
@@ -61,7 +56,6 @@ body {
     }
 }
 
-// --- OTRAS SECCIONES ---
 .form-section,
 .form-section-2 {
     display: flex;
@@ -74,7 +68,6 @@ body {
     width: 22rem;
 }
 
-// Cards Proyectos
 .proyectos {
     display: flex;
     justify-content: space-around;
@@ -104,7 +97,6 @@ body {
     }
 }
 
-// FAQ Page
 .faq-container {
     max-width: 900px;
     margin: 0 auto;
