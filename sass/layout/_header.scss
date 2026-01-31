@@ -1,19 +1,17 @@
 @use '../utilities/variables' as *;
 
-// layout/_header.scss
-
 header {
     width: 100%;
     box-shadow: $shadow-soft;
     background-color: $color-white;
 
-    // Ajuste al Nav de Bootstrap
+
     .navbar {
         background-color: $color-white !important;
         padding: 0.5rem 0;
     }
 
-    // Enlaces con línea animada
+
     .nav-custom-link {
         text-decoration: none;
         color: $color-dark;
@@ -22,35 +20,33 @@ header {
         padding-bottom: 5px;
         transition: color 0.3s ease;
 
-        // La línea inferior (Pseudo-elemento)
+
         &::after {
             content: '';
             position: absolute;
-            width: 0; // Empieza invisible (ancho 0)
+            width: 0;
             height: 2px;
             bottom: 0;
             left: 50%;
             background-color: $color-accent;
             transition: all 0.3s $ease-elegant;
-            transform: translateX(-50%); // Se mantiene centrada
+            transform: translateX(-50%);
         }
 
-        // --- ESTADO HOVER (Al pasar el mouse) ---
+
         &:hover {
             color: $color-primary;
 
             &::after {
-                width: 100%; // La línea crece
+                width: 100%;
             }
         }
 
-        // --- ESTADO ACTIVO (Página seleccionada) ---
-        // Aquí está la magia que pediste:
         &.active {
-            color: $color-primary; // Color del texto activo
-            font-weight: 600; // (Opcional) Un poco más negrita
+            color: $color-primary;
+            font-weight: 600;
 
-            // Forzamos a que la línea se mantenga completa
+
             &::after {
                 width: 100%;
             }

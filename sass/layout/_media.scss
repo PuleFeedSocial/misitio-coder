@@ -1,7 +1,10 @@
+// sass/layout/_media.scss
 @use '../utilities/variables' as *;
 
+// --- TABLET Y PANTALLAS MEDIANAS (< 991px) ---
 @media (max-width: 991px) {
 
+    // 1. Header (Estilo abierto, sin hamburguesa)
     header {
         height: auto;
         padding-bottom: 10px;
@@ -15,14 +18,49 @@
             justify-content: center;
             flex-wrap: wrap;
 
+            // Enlaces con animación Touch/Click
             a {
                 margin: 0.5rem;
                 font-size: 1rem;
+                position: relative;
+                text-decoration: none;
+                padding-bottom: 5px;
+
+                // Evita el parpadeo azul en móviles
+                -webkit-tap-highlight-color: transparent;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    bottom: 0;
+                    left: 50%;
+                    background-color: $color-accent;
+                    transition: width 0.3s $ease-elegant;
+                    transform: translateX(-50%);
+                }
+
+                // Hover (PC) + Active (Móvil al tocar)
+                &:hover::after,
+                &:active::after {
+                    width: 100%;
+                }
+
+                // Estado activo fijo
+                &.active {
+                    color: $color-primary;
+                    font-weight: 600;
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
             }
         }
     }
 
-
+    // 2. Layout Vertical
     .main-section {
         flex-direction: column;
         align-items: center;
@@ -33,18 +71,17 @@
             width: 100%;
         }
 
-
         .image-placeholder {
             margin-top: 20px;
         }
     }
 
-
+    // 3. Forms
     form {
         width: 80%;
     }
 
-
+    // 4. Tablero Scrollable
     .project-board {
         padding: 15px;
 
@@ -62,14 +99,11 @@
     }
 }
 
-
+// --- MÓVIL (< 576px) ---
 @media (max-width: 576px) {
-
-
     header nav {
         font-size: 0.9rem;
     }
-
 
     form {
         width: 95%;
@@ -81,7 +115,7 @@
         padding: 30px 0;
     }
 
-
+    // Transformación a Cards
     .project-board {
         background: transparent;
         box-shadow: none;
@@ -90,7 +124,6 @@
         .grid-header {
             display: none;
         }
-
 
         .grid-table {
             display: flex;
@@ -102,16 +135,12 @@
                 display: grid;
                 min-width: 0;
                 grid-template-columns: 1fr 1fr 1fr;
-                grid-template-areas:
-                    "tarea tarea tarea"
-                    "fecha fecha fecha"
-                    "btn1  btn2  btn3";
+                grid-template-areas: "tarea tarea tarea" "fecha fecha fecha" "btn1 btn2 btn3";
                 background-color: $color-white;
                 border: 1px solid $border-light;
                 border-radius: 10px;
                 padding: 15px;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-                margin-bottom: 0;
             }
 
             .cell {
@@ -122,16 +151,13 @@
             .cell.task {
                 grid-area: tarea;
                 font-size: 1.1rem;
-                margin-bottom: 5px;
             }
 
             .cell.date {
                 grid-area: fecha;
                 margin-bottom: 15px;
                 border-bottom: 1px dashed $border-light;
-                padding-bottom: 10px;
             }
-
 
             .cell:has(.pending) {
                 grid-area: btn1;
@@ -144,7 +170,6 @@
             .cell:has(.finished) {
                 grid-area: btn3;
             }
-
 
             .status-dot::before {
                 display: block;
@@ -180,5 +205,11 @@
     .main-section,
     .faq-box {
         padding: 10px;
+    }
+
+    // Botones agregados en móvil ocupan casi todo
+    .added {
+        width: 95%;
+        gap: 10px;
     }
 }
