@@ -1,0 +1,44 @@
+@use '../utilities/variables' as *;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin smooth-transition {
+    transition: all 0.3s $ease-elegant;
+}
+
+@mixin hover-effect {
+    cursor: pointer;
+    background-color: $color-accent;
+    color: $color-dark;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba($color-accent, 0.3);
+    @include smooth-transition;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
