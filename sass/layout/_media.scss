@@ -1,10 +1,8 @@
-// sass/layout/_media.scss
 @use '../utilities/variables' as *;
 
-// --- TABLET Y PANTALLAS MEDIANAS (< 991px) ---
+
 @media (max-width: 991px) {
 
-    // 1. Header (Estilo abierto, sin hamburguesa)
     header {
         height: auto;
         padding-bottom: 10px;
@@ -18,16 +16,14 @@
             justify-content: center;
             flex-wrap: wrap;
 
-            // Enlaces con animación Touch/Click
             a {
                 margin: 0.5rem;
                 font-size: 1rem;
                 position: relative;
                 text-decoration: none;
                 padding-bottom: 5px;
-
-                // Evita el parpadeo azul en móviles
                 -webkit-tap-highlight-color: transparent;
+
 
                 &::after {
                     content: '';
@@ -41,13 +37,13 @@
                     transform: translateX(-50%);
                 }
 
-                // Hover (PC) + Active (Móvil al tocar)
+
                 &:hover::after,
                 &:active::after {
                     width: 100%;
                 }
 
-                // Estado activo fijo
+
                 &.active {
                     color: $color-primary;
                     font-weight: 600;
@@ -56,11 +52,19 @@
                         width: 100%;
                     }
                 }
+
+                opacity: 0;
+                animation: slideIn 0.5s $ease-elegant forwards;
+            }
+
+            @for $i from 1 through 6 {
+                a:nth-child(#{$i}) {
+                    animation-delay: $i * 0.1s;
+                }
             }
         }
     }
 
-    // 2. Layout Vertical
     .main-section {
         flex-direction: column;
         align-items: center;
@@ -76,12 +80,10 @@
         }
     }
 
-    // 3. Forms
     form {
         width: 80%;
     }
 
-    // 4. Tablero Scrollable
     .project-board {
         padding: 15px;
 
@@ -99,7 +101,6 @@
     }
 }
 
-// --- MÓVIL (< 576px) ---
 @media (max-width: 576px) {
     header nav {
         font-size: 0.9rem;
@@ -115,7 +116,6 @@
         padding: 30px 0;
     }
 
-    // Transformación a Cards
     .project-board {
         background: transparent;
         box-shadow: none;
@@ -207,7 +207,6 @@
         padding: 10px;
     }
 
-    // Botones agregados en móvil ocupan casi todo
     .added {
         width: 95%;
         gap: 10px;

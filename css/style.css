@@ -236,10 +236,17 @@ header .nav-custom-link::after {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(-50%);
 }
-header .nav-custom-link.active, header .nav-custom-link:hover {
+header .nav-custom-link:hover {
   color: #3A506B;
 }
-header .nav-custom-link.active::after, header .nav-custom-link:hover::after {
+header .nav-custom-link:hover::after {
+  width: 100%;
+}
+header .nav-custom-link.active {
+  color: #3A506B;
+  font-weight: 600;
+}
+header .nav-custom-link.active::after {
   width: 100%;
 }
 
@@ -503,6 +510,53 @@ form textarea:focus {
   header nav a {
     margin: 0.5rem;
     font-size: 1rem;
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 5px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  header nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #5BC0BE;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+  }
+  header nav a:hover::after, header nav a:active::after {
+    width: 100%;
+  }
+  header nav a.active {
+    color: #3A506B;
+    font-weight: 600;
+  }
+  header nav a.active::after {
+    width: 100%;
+  }
+  header nav a {
+    opacity: 0;
+    animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  header nav a:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  header nav a:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  header nav a:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  header nav a:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  header nav a:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  header nav a:nth-child(6) {
+    animation-delay: 0.6s;
   }
   .main-section {
     flex-direction: column;
@@ -563,13 +617,12 @@ form textarea:focus {
     display: grid;
     min-width: 0;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "tarea tarea tarea" "fecha fecha fecha" "btn1  btn2  btn3";
+    grid-template-areas: "tarea tarea tarea" "fecha fecha fecha" "btn1 btn2 btn3";
     background-color: #ffffff;
     border: 1px solid #eeeeee;
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    margin-bottom: 0;
   }
   .project-board .grid-table .cell {
     border-bottom: none;
@@ -578,13 +631,11 @@ form textarea:focus {
   .project-board .grid-table .cell.task {
     grid-area: tarea;
     font-size: 1.1rem;
-    margin-bottom: 5px;
   }
   .project-board .grid-table .cell.date {
     grid-area: fecha;
     margin-bottom: 15px;
     border-bottom: 1px dashed #eeeeee;
-    padding-bottom: 10px;
   }
   .project-board .grid-table .cell:has(.pending) {
     grid-area: btn1;
@@ -622,6 +673,10 @@ form textarea:focus {
   .main-section,
   .faq-box {
     padding: 10px;
+  }
+  .added {
+    width: 95%;
+    gap: 10px;
   }
 }
 
