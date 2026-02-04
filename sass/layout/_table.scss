@@ -86,8 +86,8 @@ main .botones-table {
     margin: 1rem auto;
 }
 
-.radio-btn {
-    display: none !important;
+.grid-table .radio-btn {
+    display: none; // Comentario: Aumentamos especificidad para sobreescribir estilos de navegador/bootstrap sin usar !important.
 }
 
 .status-dot {
