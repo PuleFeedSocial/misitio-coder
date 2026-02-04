@@ -133,8 +133,7 @@ body {
 
 .proyecto {
   width: 20rem;
-  width: 20rem;
-  min-height: 20rem;
+  min-height: 10rem;
   border: 1px solid rgba(238, 238, 238, 0.6);
   background-color: #ffffff;
   border-radius: 0.5rem;
@@ -580,7 +579,6 @@ form textarea:focus {
   .grid-table {
     min-width: 600px;
   }
-  /* Comentario: Eliminamos la redefinicion de grid-row y grid-header para evitar el estado "Frankenstein" y mantener un solo grid consistente. */
 }
 @media (max-width: 576px) {
   header nav {

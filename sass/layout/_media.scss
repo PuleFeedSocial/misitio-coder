@@ -86,22 +86,12 @@
 
     .project-board {
         padding: 15px;
-        overflow-x: auto; // Comentario: Habilitamos scroll horizontal en el contenedor
+        overflow-x: auto;
     }
 
     .grid-table {
-        // overflow-x: auto; // Eliminado
-        // display: block; // Eliminado
-        min-width: 600px; // Comentario: Forzamos ancho minimo para mantener estructura de grid
+        min-width: 600px;
     }
-
-    /* Comentario: Eliminamos la redefinicion de grid-row y grid-header para evitar el estado "Frankenstein" y mantener un solo grid consistente. */
-    // .grid-row,
-    // .grid-header {
-    //     min-width: 600px;
-    //     display: grid;
-    //     grid-template-columns: 2fr 1fr 80px 80px 80px;
-    // }
 }
 
 @media (max-width: 576px) {
