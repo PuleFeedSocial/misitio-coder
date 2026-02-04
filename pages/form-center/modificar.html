@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Proyecto - Administración de Proyectos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <header class="bg-white shadow-sm py-2">
+        <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center px-4">
+            <nav class="d-flex align-items-center flex-wrap justify-content-center py-2 mb-2 mb-md-0 navbar-expand-lg">
+                <a href="../../index.html" class="nav-custom-link">Inicio</a> <span
+                    class="mx-2 text-muted opacity-50 d-none d-md-inline">|</span>
+                <a href="../proyectos.html" class="nav-custom-link active">Proyectos</a>
+                <span class="mx-2 text-muted opacity-50 d-none d-md-inline">|</span>
+                <a href="../acercade.html" class="nav-custom-link">Acerca de</a>
+                <span class="mx-2 text-muted opacity-50 d-none d-md-inline">|</span>
+                <a href="../contacto.html" class="nav-custom-link ">Contacto</a>
+            </nav>
+            <div class="d-flex align-items-center justify-content-center gap-2">
+                <span class="user-icon me-2" style="color: #3A506B;">👤</span>
+                <a href="../login-center/login.html" class="btn-custom-main btn-sm-custom">Iniciar Sesión</a>
+                <a href="../login-center/register.html" class="btn-custom-main btn-sm-custom">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow-1 container py-5">
+        <div class="row justify-content-center text-center mb-4">
+            <div class="col-md-8">
+                <h1 class="fw-bold text-dark">¿Que modificacion deseas hacer a tu<span class="text-custom-blue">
+                        Proyecto</span>?</h1>
+                <p class="text-secondary">
+                    Nota: Asegúrate de revisar que el nombre no esté duplicado para evitar confusiones en el historial
+                    de tu equipo.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="card border-0 shadow-sm p-4 rounded-3">
+                    <form action="#">
+                        <div class="mb-3 text-start">
+                            <label class="form-label fw-bold">Nombre del Proyecto</label>
+                            <input type="text" class="form-control border-light-subtle bg-light py-2"
+                                placeholder="Modificar nombre de proyecto" required>
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label class="form-label fw-bold">Nombre del Desarrollador</label>
+                            <input type="text" class="form-control border-light-subtle bg-light py-2"
+                                placeholder="Modificar nombre de desarrollador" required>
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label class="form-label fw-bold">Agregar/Eliminar notas de proyecto</label>
+                            <textarea class="form-control border-light-subtle bg-light" rows="4"
+                                placeholder="Detalla la informacion de tu proyecto" required></textarea>
+                        </div>
+                        <div class="d-grid pt-2">
+                            <input type="submit" class="btn-custom-main py-2 fw-bold" value="Modificar proyecto">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-custom py-5 text-white">
+        <div class="container text-start">
+            <h4 class="footer-title mb-4">REDES SOCIALES</h4>
+            <ul class="list-unstyled">
+                <li class="mb-2">Instagram: administrador.de.area.sig</li>
+                <li class="mb-2">CompuTrabajo: administradordetarea.trabajo</li>
+                <li class="mb-2">Correo Electrónico: Administradordeproyectos@dominio.com</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
