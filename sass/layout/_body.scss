@@ -7,6 +7,11 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
+    .encontrados {
+        margin: 0 auto;
+        padding: 1.7rem;
+    }
 }
 
 .main-section {

@@ -66,6 +66,10 @@ body {
   display: flex;
   flex-direction: column;
 }
+body .encontrados {
+  margin: 0 auto;
+  padding: 1.7rem;
+}
 
 .main-section {
   display: flex;
