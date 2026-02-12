@@ -596,22 +596,12 @@ form textarea:focus {
     min-width: 600px;
   }
 }
-@media (max-width: 576px) {
-  header nav {
-    font-size: 0.9rem;
-  }
-  form {
-    width: 95%;
-    margin: 10px auto;
-  }
-  .form-section {
-    height: auto;
-    padding: 30px 0;
-  }
+@media (max-width: 768px) {
   .project-board {
     background: transparent;
     box-shadow: none;
     padding: 0;
+    width: 100%;
   }
   .project-board .grid-header {
     display: none;
@@ -621,6 +611,7 @@ form textarea:focus {
     flex-direction: column;
     gap: 15px;
     overflow-x: visible;
+    min-width: 0;
   }
   .project-board .grid-table .grid-row {
     display: grid;
@@ -671,6 +662,19 @@ form textarea:focus {
   .project-board .grid-table .radio-btn.finished + .status-dot::before {
     content: "Fin";
     color: #6FFFE9;
+  }
+}
+@media (max-width: 576px) {
+  header nav {
+    font-size: 0.9rem;
+  }
+  form {
+    width: 95%;
+    margin: 10px auto;
+  }
+  .form-section {
+    height: auto;
+    padding: 30px 0;
   }
   .proyectos {
     width: 95%;
